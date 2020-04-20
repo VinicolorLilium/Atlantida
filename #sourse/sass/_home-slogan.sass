@@ -1,0 +1,115 @@
+// =====================================================
+// общие стили для блока slogan
+.home-slogan
+	background: url("../../img/home-slogan/slogan-bg.png") top center/cover no-repeat
+	padding: 200px 0
+	@media (max-width: $md2)
+		padding: 80px 0
+	@media (max-width: $md3)
+		padding: 50px 0
+	&__row
+		text-align: center
+	// =====================================================
+	// слайдер в блоке slogan
+	&__slider
+		position: relative
+		& .slick-track
+			display: flex
+		& .slick-list
+			overflow: hidden
+		& .slick-list
+			max-width: 90%
+			margin: 0 auto
+			@media (max-width: $md2)
+				max-width: 85%
+			@media (max-width: $md3)
+				max-width: 80%
+		& .slick-arrow
+			font-size: 0
+			border: none
+			outline: none
+			position: absolute
+			background: transparent
+			top: 60%
+			z-index: 2
+			cursor: pointer
+			&:before
+				content: ""
+				display: block
+				width: 34px
+				height: 34px
+		& .slick-arrow.slick-prev
+			left: 0
+			&:before
+				background: url("../../img/home-slogan/arrow-prev.png") top center/cover no-repeat
+		& .slick-arrow.slick-next
+			right: 0
+			&:before
+				background: url("../../img/home-slogan/arrow-nest.png") top center/cover no-repeat
+	// =====================================================
+	// стили для контента в слайдах
+	&__top-text
+		font-size: 14px
+		font-weight: normal
+		line-height: 3.57
+		letter-spacing: 1.4px
+		margin: 0 0 23px 0
+	&__line
+		max-width: 516px
+		@media (max-width: $md2)
+			max-width: 450px
+		@media (max-width: 600px)
+			max-width: 400px
+		@media (max-width: $md3)
+			max-width: 280px
+		@media (max-width: $md5)
+			max-width: 200px
+	&__title
+		max-width: 516px
+		font-family: $font-three
+		font-size: 36px
+		font-weight: normal
+		letter-spacing: 3.6px
+		margin: 0 auto
+		padding: 35px 10px 25px 10px
+		@media (max-width: $md2)
+			font-size: 30px
+		@media (max-width: 600px)
+			font-size: 24px
+		@media (max-width: $md3)
+			font-size: 18px
+			padding: 15px 5px 15px
+		@media (max-width: $md5)
+			padding: 10px 5px
+	&__btn
+		font-size: 15px
+		font-weight: normal
+		letter-spacing: 1.5px
+		background: inherit
+		text-transform: capitalize
+		min-width: 153px
+		border-color: $white-eleven
+		margin: 44px auto
+		position: relative
+		& span
+			color: hsl(0, 0%, 100%)
+			position: relative
+			z-index: 2
+			transition: 0.5s
+		&:before
+			content: ""
+			background: $white-eleven
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			width: 0
+			display: block
+			transition: 0.5s
+			z-index: 1
+		&:hover span
+			color: $bluish-green
+		&:hover:before
+			width: 100%
+.home-slogan-slider-item
+	color: hsl(0, 0%, 100%)

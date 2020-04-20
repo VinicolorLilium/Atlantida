@@ -1,0 +1,151 @@
+// ============================================================
+// общие стили для блока about
+.home-about
+	padding: 73px 0 46px 0
+	// ============================================================
+	// блок с картинкой
+	&__body
+		background: hsl(0, 0%, 100%)
+		text-align: center
+		padding: 0 0 50px
+	&__img
+		margin: 0 0 55px 0
+		& img
+			display: block
+			width: 100%
+	&__title
+		font-family: $font-three
+		font-size: 18px
+		font-weight: normal
+		letter-spacing: 1.8px
+		color: $greyish-brown-three
+		text-transform: uppercase
+		margin: 0 0 27px
+	&__text
+		max-width: 1026px
+		font-size: 14px
+		font-weight: normal
+		line-height: 1.79
+		letter-spacing: 1.4px
+		color: $greyish-brown-three
+		text-align: left
+		margin: 40px auto 0
+		padding: 0 10px 0
+	// ============================================================
+	// блок кнопок в блоке с картинкой
+	&__btn-block
+		margin: 45px 0 0 0
+		display: flex
+		justify-content: center
+		@media (max-width: $md3)
+			flex-direction: column
+	// общие стили для кнопок
+	&__btn
+		min-width: 135px
+		border-color: $greyish-brown-three
+		padding: 10px
+		font-size: 13.5px
+		font-weight: normal
+		margin: 0 2px
+		position: relative
+		@media (max-width: $md3)
+			margin: 0 10px 10px
+		// эффект при наведении общие
+		& span
+			position: relative
+			z-index: 2
+			transition: 0.5s
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			width: 0
+			display: block
+			transition: 0.5s
+			z-index: 1
+		// модификатор для темной кнопки
+		&--dark
+			background-color: $greyish-brown-three
+			letter-spacing: 1.35px
+			color: $pinkish-grey-six
+			// эффект при наведении
+			&:before
+				background: $white-eleven
+			&:hover span
+				color: $greyish-brown-three
+			&:hover:before
+				width: 100%
+		// модификатор для светлой кнопки
+		&--lighy
+			letter-spacing: 1.35px
+			color: $greyish-brown-three
+			// эффект при наведении
+			&:before
+				background: $greyish-brown-three
+			&:hover span
+				color: $white-eleven
+			&:hover:before
+				width: 100%
+	&__footer
+		padding: 39px 0 0 0
+// ============================================================
+// блок со статистикой в низу блока about
+.home-about-footer
+	&__body
+		display: flex
+		@media (max-width: $md2)
+			flex-wrap: wrap
+			justify-content: center
+			margin: 0 -10px
+		@media (max-width: $md3)
+			padding: 0 10px
+	&__column
+		flex: 1 1 33.333%
+		margin: 0 0 30px 0
+		border-right: 1px solid $greyish-two
+		@media (max-width: $md2)
+			flex: 1 1 calc(100% / 12 * 6 -20px)
+			border-right: none
+			border-bottom: 1px solid $greyish-two
+			padding: 0 0 10px 0
+			margin: 0 10px 30px
+			&:nth-child(odd)
+				border-right: 1px solid $greyish-two
+			&:nth-child(even)
+				border-left: 1px solid $greyish-two
+		@media (max-width: $md3)
+			flex: 1 1 100%
+			margin: 0 0 30px 0
+			&:nth-child(odd)
+				border-right: none
+			&:nth-child(even)
+				border-left: none
+			&:last-child
+				border-bottom: none
+		&:last-child
+			border-right: none
+		@media (max-width: $md2)
+// ============================================================
+// карточка со статистикой как отдельный блок
+.stats-block
+	text-align: center
+	font-family: $font-two
+	display: flex
+	flex-direction: column
+	height: 100%
+	&__icon
+		margin: 0 0 20px 0
+	&__title
+		flex: 1 1 auto
+		font-size: 13.5px
+		letter-spacing: 1.35px
+		color: $greyish-brown-three
+		text-transform: uppercase
+		max-width: 90px
+		margin: 0 auto 28px
+	&__number
+		font-size: 45.5px
+		font-weight: bold
+		color: $greyish-brown-three

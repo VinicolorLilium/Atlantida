@@ -1,0 +1,19 @@
+// ================================================
+// общие стили для блока blog-page-top
+.blog-page-top
+	padding: 110px 10px 120px
+	text-align: center
+	background: url("../../../img/blog-page/blog-main-bg.jpeg") top center/cover no-repeat
+	@media (max-width: $md3)
+		padding: 80px 10px
+	// заголовок в блоке
+	&__title
+		font-family: $font-three
+		font-size: 36px
+		font-weight: normal
+		letter-spacing: 3.6px
+		color: hsl(0, 0%, 100%)
+		text-transform: uppercase
+		margin: 0 0 20px 0
+		@media (max-width: $md3)
+			font-size: 24px

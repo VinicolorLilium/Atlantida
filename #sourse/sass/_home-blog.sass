@@ -1,0 +1,105 @@
+//===========================================
+// общие стили для блока home-blog
+.home-blog
+	padding: 83px 0 0 0
+	text-align: center
+	//контейнер с постами
+	&__body
+		margin: 75px 0 0 0
+		display: flex
+		flex-wrap: wrap
+	// обертка для каждого поста
+	&__column
+		flex: 1 1 50%
+		@media (max-width: $md2)
+			flex: 1 1 100%
+//===========================================
+// стили для блока поста уневерсальным блоком
+.block-post
+	display: flex
+	flex-wrap: wrap
+	@media (max-width: $md2)
+			margin: 0 0 20px 0
+	// обертка для двух частей поста
+	&__column
+		flex: 1 1 50%
+		@media (max-width: 580px)
+			flex: 1 1 100%
+	// блок поста с обратным направление частей
+	&--reverse
+		flex-direction: row-reverse
+	// блок с изображением в посте
+	&__img
+		height: 100%
+		position: relative
+		overflow: hidden
+		@media (max-width: 580px)
+			min-height: 300px
+		&:hover img
+			transform: scale(1.5)
+		& img
+			width: 100%
+			height: 100%
+			object-fit: cover
+			position: absolute
+			top: 0
+			left: 0
+			display: block
+			transition: 3s
+	// блок с контентой частью поста
+	&__content
+		padding: 45px 37px 70px
+		background: $dark-grey-two
+		text-align: left
+		@media (max-width: $md1)
+			padding: 30px 20px 40px
+	// элемент с сылками на автора и дату публикации
+	&__top
+		&:after
+			content: ""
+			display: block
+			width: 151px
+			height: 1px
+			background-color: $greyish-brown-eight
+			margin: 10px 0 20px 0
+	&__top,
+	&__link
+		font-size: 12.5px
+		font-style: italic
+		color: $white-five
+	&__link
+		&:hover
+			text-decoration: underline
+	// заголовок поста
+	&__title
+		font-family: $font-two
+		font-size: 13.5px
+		font-weight: normal
+		line-height: 1.3
+		letter-spacing: 1.35px
+		color: $white-five
+		text-transform: uppercase
+		margin: 0 0 37px 0
+		position: relative
+		padding: 0 0 0 15px
+		&:before
+			content: ""
+			display: block
+			border-top: 4px solid transparent
+			border-left: 7px solid $white-five
+			border-bottom: 4px solid transparent
+			position: absolute
+			top: 50%
+			left: 0
+			+translate(0,-50%)
+		&:hover
+			text-decoration: underline
+	// текст поста
+	&__text
+		font-size: 14px
+		line-height: 1.43
+		letter-spacing: 1.4px
+		color: $warm-grey-three
+		@media (max-width: $md1)
+			max-height: 197px
+			overflow: hidden

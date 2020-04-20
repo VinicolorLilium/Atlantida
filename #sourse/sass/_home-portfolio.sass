@@ -1,0 +1,52 @@
+//=====================================================
+// общие стили блока portfolio
+.home-portfolio
+	text-align: center
+	padding: 77px 0 0 0
+	background: hsl(0, 0%, 100%)
+	//=====================================================
+	// стили для контента блока
+	&__body
+		margin: 52px 0 0 0
+	// контейнер с карточками работ
+	&__grid
+		background: $black-eight
+		margin: 49px 0 0 0
+		display: flex
+		flex-wrap: wrap
+		min-height: 690px
+	// карточка работы
+	&__item
+		width: calc(100% / 12 * 3)
+		@media (max-width: $md2)
+			width: calc(100% / 12 * 4)
+		@media (max-width: 600px)
+			width: calc(100% / 12 * 6)
+		@media (max-width: $md3)
+			width: 100%
+		& img
+			width: 100%
+			height: 100%
+			display: block
+			object-fit: cover
+//=====================================================
+// стили для фильтра
+.masonry-filter
+	// блок с кнопка фильтрации
+	&__btn
+		& button
+			font-size: 10.5px
+			font-weight: normal
+			letter-spacing: 1.05px
+			color: $greyish-brown-three
+			text-transform: uppercase
+			padding: 10px 25px
+			border-color: $greyish-brown-three
+			background-color: inherit
+			outline: none
+			cursor: pointer
+			margin: 0 2.5px 15px 0
+			transition: 0.3s
+			&:hover
+				color: hsl(0, 0%, 100%)
+				background: $greyish-brown-three

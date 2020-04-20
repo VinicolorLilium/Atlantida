@@ -1,0 +1,176 @@
+// =========================================================
+// общие стили поста
+.post
+	// полный текст поста
+	&__text
+		max-height: 100%
+		overflow: visible
+	// цитата в посте
+	&__quote
+		font-size: 16px
+		font-weight: bold
+		font-style: italic
+		line-height: 1.56
+		letter-spacing: 1.6px
+		color: $greyish-brown-three
+		padding: 60px 59px 60px 45px
+		border: solid 1.8px hsl(0, 0%, 66%)
+		margin: 0 0 58px 0
+	// ссылки для соцсетей
+	&__social-link
+		display: flex
+		justify-content: center
+		align-items: center
+		padding: 17px 0 20px 0
+		border-top: 1px solid hsl(0, 0%, 72%)
+		border-bottom: 1px solid hsl(0, 0%, 72%)
+		& a
+			width: 31px
+			height: 31px
+			margin: 0 2.5px 0
+			border-radius: 50%
+			transition: 0.3s
+			& img
+				width: 100%
+				height: 100%
+				object-fit: cover
+			&:hover
+				box-shadow: 0 0 5px rgba(0,0,0,0.5)
+// ===============================================================
+// блок комментариев
+.post-comments
+	padding: 16px 0 90px 0
+	// счетчик количества комментов
+	&__number
+		font-family: $font-two
+		font-size: 16px
+		font-weight: bold
+		line-height: 1.09
+		letter-spacing: 1.6px
+		color: $greyish-brown-three
+		text-transform: uppercase
+		margin: 0 0 14px 0
+	// блок с комментом
+	&__item
+		padding: 37px 0 15px 0
+		display: flex
+		flex-direction: column
+		border-bottom: 1px solid hsl(0, 0%, 72%)
+		@media (max-width: $md2)
+			padding: 37px 10px 15px 10px
+		// блок с ответом на коммент
+		&--reply
+			margin: 0 0 0 98px
+			@media (max-width: $md2)
+				margin: 0 0 0 50px
+	// блок коммента разделен на несколько отдельных строк
+	&__row
+		display: flex
+		align-items: center
+		&--right
+			justify-content: flex-end
+	// аватар автора
+	&__img
+		width: 70px
+		height: 70px
+		border-radius: 50%
+		margin: 0 28px 0 0
+		overflow: hidden
+	// имя автора
+	&__author
+		font-family: $font-two
+		font-size: 13.5px
+		font-weight: bold
+		line-height: 1.3
+		letter-spacing: 1.35px
+		color: $greyish-brown-three
+		text-transform: uppercase
+	// дата публикации
+	&__date
+		font-style: italic
+		line-height: 1.25
+		color: $greyish-brown-three
+	// текст коммента
+	&__text
+		line-height: 1.79
+		letter-spacing: 1.4px
+		color: $greyish-brown-three
+		margin: 0 0 0 98px
+		@media (max-width: $md3)
+			margin: 0 0 0 0
+	// кнопка ответа на коммент
+	&__reply
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		width: 100%
+		margin: 47px 0 0 0
+		@media (max-width: $md3)
+			margin: 27px 0 0 0
+	&__btn
+		font-style: italic
+		line-height: 1.25
+		color: $greyish-brown-three
+		margin: 0 0 0 9px
+// =========================================================
+// блок с формой добавления коммента
+.post-form
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin: 0 -15px
+	@media (max-width: $md2)
+		margin: 0
+	// стили для текстовых полей формы
+	& input,
+	& textarea
+		font-style: italic
+		letter-spacing: 1.4px
+		color: $greyish-brown-four
+		text-transform: capitalize
+		padding: 13px 24px
+		border: 2.1px solid $greyish-brown-four
+		margin: 0 15px 20px
+		background: inherit
+	& input
+		width: calc(50% - 30px)
+		@media (max-width: $md2)
+			width: 100%
+			margin: 0 0 20px
+	& textarea
+		width: calc(100% - 30px)
+		min-height: 95px
+		resize: none
+		@media (max-width: $md2)
+			width: 100%
+			margin: 0 0 20px
+	// стили для кнопки отправки комента
+	& button[type=submit]
+		margin: 0 0 0 15px
+		font-family: $font-two
+		font-size: 13.5px
+		letter-spacing: 1.35px
+		color: $white-five
+		text-transform: capitalize
+		min-width: 135px
+		background-color: $greyish-brown-four
+		padding: 12px 10px
+		border: 1px solid transparent
+		cursor: pointer
+		transition: all 0.3s
+		&:hover
+			background: inherit
+			color: $greyish-brown-four
+			border: 1px solid $greyish-brown-four
+		@media (max-width: $md2)
+			margin: 0
+	// заголовок блока с формой
+	&__title
+		font-family: $font-two
+		font-size: 16px
+		font-weight: bold
+		line-height: 1.09
+		letter-spacing: 1.6px
+		color: $greyish-brown-three
+		text-transform: uppercase
+		margin: 0 0 45px 0

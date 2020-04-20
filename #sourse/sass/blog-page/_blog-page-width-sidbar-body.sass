@@ -1,0 +1,221 @@
+// =================================================
+// общие стли для блокf c спотами
+.blog-page
+	&__body
+		padding: 85px 0 85px
+.body-blog-page
+	display: flex
+	justify-content: space-between
+	margin: 0 -25px
+	@media (max-width: $md2)
+		margin: 0 -15px
+	@media (max-width: 660px)
+		margin: 0
+		flex-wrap: wrap
+	&__column
+		margin: 0 25px
+		@media (max-width: $md2)
+			margin: 0 15px
+		@media (max-width: 660px)
+			margin: 0 0 30px
+	// ширина секции с постами
+	&__content
+		flex: 0 0 calc(100% / 12 * 8 - 50px)
+		@media (max-width: $md2)
+			flex: 0 0 calc(100% / 12 * 7 - 30px)
+		@media (max-width: 660px)
+			flex: 0 0 100%
+	// ширина секции с сайдбаром
+	&__sidbar
+		flex: 0 0 calc(100% / 12 * 4 - 50px)
+		display: flex
+		flex-direction: column
+		@media (max-width: $md2)
+			flex: 0 0 calc(100% / 12 * 5 - 30px)
+		@media (max-width: 660px)
+			flex: 0 0 100%
+.blog-page-posts-body
+	& .post-preview__img
+		height: 373px // фиксированная высота картинки поста
+		@media (max-width: $md2)
+			height: 200px
+.blog-page-posts
+	&__item
+		margin: 0 0 50px 0 // отступы между постами
+	// пагинациии в секции постов
+	&__pagination
+		display: flex
+		flex-wrap: wrap
+		margin: 20px 0 0 0
+		justify-content: center
+		&:before
+			content: ""
+			display: block
+			width: 100%
+			height: 1px
+			background-color: $greyish-brown-three
+			margin: 0 0 75px 0
+		& a
+			font-style: italic
+			line-height: 1.25
+			color: $greyish-brown-three
+			border: solid 0.8px $greyish-brown-three
+			padding: 11px 16px
+			margin: 0 5px 0 0
+			transition: 0.3s
+			&:hover
+				background: $greyish-brown-three
+				color: hsl(0, 0%, 100%)
+// =============================================
+// стили для сайдбара
+.sidbar-blog-page
+	&__item
+	// форма поиска
+	&__form
+		width: 100%
+		border: solid 1.8px hsl(0, 0%, 66%)
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 40px
+		padding: 0 16px
+		margin: 0 0 35px 0
+		// тестовое поле для ввода запроса
+		& input[type=text]
+			background: inherit
+			border: none
+			font-style: italic
+			color: $greyish-brown-three
+			outline: none
+		// кнопка отправки запроса
+		& button[type=submit]
+			width: 14px
+			height: 14px
+			background: inherit
+			border: none
+			position: relative
+			&:before
+				content: ""
+				background: url("../../../img/blog-with-sidebar-page/search-icon.png") center center/cover no-repeat
+				width: 100%
+				height: 100%
+				position: absolute
+				left: 0
+				top: 0
+				cursor: pointer
+// блок с последними публикациями
+.sidbar-blog-page__lasts-post
+	margin: 0 0 30px 0
+.sidbar-lasts-post
+	display: flex
+	flex-direction: column
+	// заголовок блока
+	&__title
+		font-family: $font-two
+		font-size: 16px
+		font-weight: bold
+		line-height: 1.09
+		letter-spacing: 1.6px
+		color: $greyish-brown-three
+		text-transform: uppercase
+	// обертка для превью поста
+	&__column
+		padding: 35px 0
+	&__column + *
+		border-top: 1px solid hsl(0, 0%, 72%)
+// превью поста как отдельный самостоятельный блок
+.lasts-post-conteiner
+	display: flex
+	justify-content: space-between
+	@media (max-width: 660px)
+		justify-content: flex-start
+.lasts-post
+	// разделение контента на несколько частей
+	&__column
+		flex: 1 1 auto
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		@media (max-width: 660px)
+			flex: 0 1 auto
+	// картинка поста
+	&__img
+		width: 113px
+		margin: 0 17px 0 0
+		& img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	// заголовок поста
+	&__title
+		font-family: $font-two
+		font-size: 12px
+		font-weight: bold
+		line-height: 1.25
+		letter-spacing: 1.2px
+		color: $greyish-brown-three
+		text-transform: uppercase
+		&:hover
+			text-decoration: underline
+	// начало поста
+	&__text
+		font-style: italic
+		line-height: 1.5
+		letter-spacing: 1.4px
+		color: $greyish-brown-three
+		height: 64px
+		overflow: hidden
+// список с категорями
+.sidbar__list
+	margin: 19px 0 60px 0
+	// каждая категория - ссылка
+	& a
+		width: 100%
+		font-size: 16px
+		font-style: italic
+		line-height: 0.94
+		color: $greyish-brown-three
+		padding: 20px 0 20px 16px
+		border-bottom: 1px solid hsl(0, 0%, 72%)
+		position: relative
+		transition: 0.3s
+		&:before
+			content: ""
+			display: block
+			border-left: 4px solid $greyish-brown-three
+			border-top: 4px solid transparent
+			border-bottom: 4px solid transparent
+			position: absolute
+			top: 50%
+			left: 3px
+			transform: translateY(-50%)
+		&:hover
+			background: $greyish-brown-three
+			color: hsl(0, 0%, 72%)
+			&:before
+				border-left: 4px solid hsl(0, 0%, 72%)
+// блок с изображениями постов - они же ссылки на посты
+.sidbar-photo
+	// контейнер для изображений
+	&__conteiner
+		margin: 35px -7px 0
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+	// каждое изображение в своей обертке
+	&__item
+		flex: 1 0 auto
+		margin: 0 7px 18px
+		text-align: center
+		// изображение как ссылка
+		& a
+			width: 100px
+			height: 90px
+			// картинка в самой ссылке
+			& img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				transition: 0.5s
+			&:hover img
+				transform: scale(1.05)

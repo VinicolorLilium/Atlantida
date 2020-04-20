@@ -1,0 +1,161 @@
+//===============================================================
+// миксины
+//===============================================================
+=translate($a,$b)
+	transform: translate($a,$b)
+//===============================================================
+// анимация
+//===============================================================
+
+//===============================================================
+//подключение шрифтов
+//===============================================================
+@import "_fonts.sass"
+$font-one: 'CrimsonText', sans-serif
+$font-two: 'Montserrat', sans-serif
+$font-three: 'Amsdam', sans-serif
+//===============================================================
+//подключение цветов
+//===============================================================
+@import "_colors.sass"
+//===============================================================
+//базовые переменные
+//===============================================================
+$basik-font-size: 14px
+$basik-color: #000
+$basik-font-family: $font-one
+
+//===============================================================
+//переменные для z-index
+//===============================================================
+$nav: 300
+$pop-up: 400
+$slider: 500
+//===============================================================
+// брейкпоинты
+//===============================================================
+$mw: 1150px
+$md1: 1024px
+$md2: 768px
+$md3: 425px
+$md4: 375px
+$md5: 320px
+//===============================================================
+// базовые стили
+//===============================================================
+body
+	font-size: $basik-font-size
+	box-sizing: border-box
+	color: $basik-color
+	line-height: 1.2
+	font-family: $basik-font-family
+	background: $white-five
+
+body.block
+	overflow: hidden /*запрещаем скролл при открытом меню*/
+*,
+*::after,
+*::before
+	box-sizing: inherit
+	padding: 0
+	margin: 0
+
+ul
+	list-style: none
+
+a
+	display: inline-block
+	text-decoration: none
+
+.wrap
+	max-width: $mw
+	padding: 0 10px 0 10px
+	margin: 0 auto
+// обертка для контента страницы
+.home-main
+	padding: 92px 0 0 0
+	@media (max-width: $md3)
+		padding: 70px 0 0 0
+// заголовок блока
+.block-title
+	font-family: $font-three
+	font-size: 18px
+	font-weight: normal
+	letter-spacing: 1.8px
+	color: hsl(0, 0%, 100%)
+	margin: 0 0 25px 0
+	text-transform: uppercase
+	&--dark
+		color: $greyish-brown-three
+// описание блока
+.block-description
+	font-size: 14px
+	font-weight: normal
+	line-height: 1.79
+	letter-spacing: 1.4px
+	text-align: center
+	color: $pinkish-grey-five
+	max-width: 1026px
+	margin: 0 auto
+	&--dark
+		color: $greyish-brown-three
+// декоративная линия под заголовками
+.line
+	margin: 0 auto
+	// маленькая декоративная линия
+	&--small
+		margin: 0 auto 41px
+	& img
+		display: block
+		max-width: 100%
+		margin: 0 auto
+// общие стили для кнопок
+.btn
+	font-family: $font-two
+	padding: 14px 10px
+	border: 1.8px solid
+	@media (max-width: $md3)
+		padding: 10px 5px
+// хлебные крошки
+.page-breadcrumbs
+	letter-spacing: 1.4px
+	color: hsl(0, 0%, 100%)
+	text-transform: capitalize
+	margin: 25px 0 0 0
+	& a
+		color: inherit
+		padding: 0 20px 0 0
+		position: relative
+		&:hover
+			text-decoration: underline
+		&:after
+			content: ">"
+			position: absolute
+			right: 3px
+			top: 50%
+			transform: translate(0, -50%)
+
+//===============================================================
+// импорт стилей блоков
+//===============================================================
+@import "_header.sass"
+@import "_home-slogan.sass"
+@import "_home-about-us.sass"
+@import "_home-services.sass"
+@import "_home-team.sass"
+@import "_home-portfolio.sass"
+@import "_home-prices.sass"
+@import "_home-porches.sass"
+@import "_home-blog.sass"
+@import "_home-clients.sass"
+@import "_home-testimonials.sass"
+@import "_home-map.sass"
+@import "_footer.sass"
+@import "blog-page/_blog-page-top.sass"
+@import "blog-page/_blog-page-posts.sass"
+@import "blog-page/_blog-page-width-sidbar-body.sass"
+@import "post-page/_post-page-body.sass"
+//===============================================================
+// проверка поддержки CSS Grid сетки
+//===============================================================
+@supports (display:grid)

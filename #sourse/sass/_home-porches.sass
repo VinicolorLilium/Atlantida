@@ -1,0 +1,50 @@
+// =====================================================
+// общие стили для блока purchase
+.home-purchase
+	background: $dark-grey-two
+	padding: 35px 0 40px 0
+	&__body
+		display: flex
+		justify-content: space-between
+		align-items: center
+		@media (max-width: $md2)
+			flex-direction: column
+			align-items: flex-start
+			padding: 0 0 0 30px
+		@media (max-width: $md2)
+			padding: 0 0 0 0
+	&__column
+		flex: 1 1 auto
+		@media (max-width: $md2)
+			margin: 0 0 20px 0
+	// логотип
+	&__img
+		margin: 0 41px 0 0
+	// заголовок в блоке с текстом
+	&__title
+		font-family: $font-two
+		font-size: 16px
+		line-height: 1.09
+		margin: 0 0 15px
+		letter-spacing: 1.6px
+		color: $white-nine
+	// стили блока текста
+	&__text
+		max-width: 616px
+		font-size: 16px
+		font-style: italic
+		line-height: 1.28
+		color: $warm-grey-four
+	// стили кнопки
+	&__btn
+		font-family: $font-two
+		font-size: 13.5px
+		letter-spacing: 1.35px
+		color: $white-five
+		text-transform: capitalize
+		padding: 10px
+		min-width: 135px
+		border-color: $white-five
+		text-align: center
+		&:hover
+			text-decoration: underline
